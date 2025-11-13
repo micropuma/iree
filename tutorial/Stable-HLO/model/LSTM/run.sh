@@ -3,6 +3,8 @@ iree-compile --iree-hal-target-backends=cuda \
              --iree-cuda-target=sm_86 \
              --iree-input-type=stablehlo \
              --mlir-print-ir-after-all \
+             --mlir-pass-statistics \
+             --mlir-timing \
              LSTM.mlir -o LSTM.vmfb \
              2>&1 | tee output.dump
 
