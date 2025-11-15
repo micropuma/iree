@@ -1,2 +1,4 @@
 source iree/bin/activate
-source ../iree-cuda/.env && export PYTHONPATH
+source .env && export PYTHONPATH
+
+export PATH=/home/douliyang/large/mlir-workspace/iree/build/tools:$PATH
