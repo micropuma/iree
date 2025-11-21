@@ -5,8 +5,17 @@ iree-compile --iree-hal-target-backends=cuda \
              --mlir-print-ir-after-all \
              --mlir-pass-statistics \
              --mlir-timing \
+             --iree-flow-dump-dispatch-graph-output-file=LSTM.dispatches.dot \
              LSTM.mlir -o LSTM.vmfb \
              2>&1 | tee output.dump
+
+# dump dispatch graph for visualization
+iree-compile --iree-hal-target-backends=cuda \
+             --iree-cuda-target=sm_86 \
+             --iree-input-type=stablehlo \
+             --iree-flow-dump-dispatch-graph \
+             --iree-flow-dump-dispatch-graph-output-file=LSTM.dispatches.dot \
+             LSTM.mlir -o LSTM.vmfb
 
 iree-run-module --device=cuda \
                 --module=LSTM.vmfb \
