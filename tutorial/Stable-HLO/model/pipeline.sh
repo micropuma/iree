@@ -48,7 +48,11 @@ echo "==> Compiling MLIR to VMFB ..."
 iree-compile \
     --iree-hal-target-backends=cuda \
     --iree-cuda-target=sm_86 \
-    "$MLIR_FILE" -o "$VMFB_FILE"
+    --mlir-print-ir-after-all \
+    --mlir-pass-statistics \
+    --mlir-timing \
+    "$MLIR_FILE" -o "$VMFB_FILE" \
+    2>&1 | tee compile_output.dump
 
 
 # ---------------------------------------------------------------------------
