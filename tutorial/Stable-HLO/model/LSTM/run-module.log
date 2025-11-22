@@ -1,0 +1,502 @@
+[module.__init+00000000]    <block>
+[module.__init+00000001]    %i0 = vm.const.i32 1  // 0x00000001
+[module.__init+00000008]    %r0 = vm.const.ref.zero
+[module.__init+0000000B]    %i1 = vm.const.i32 14  // 0x0000000E
+[module.__init+00000012]    %i2:3 = vm.const.i64 -1  // 0xFFFFFFFFFFFFFFFF
+[module.__init+0000001D]    %i4 = vm.const.i32 18  // 0x00000012
+[module.__init+00000024]    %i5 = vm.const.i32.zero
+[module.__init+00000027]    %i6:7 = vm.const.i64.zero
+[module.__init+0000002A]    %i8:9 = vm.const.i64 1  // 0x0000000000000001
+[module.__init+00000035]    %r1 = vm.const.ref.zero
+[module.__init+00000038]    %i10 = vm.call @hal.devices.count()
+[module.__init+00000044]    %i10:11 = vm.ext.i32.i64.s %i10(1)
+[module.__init+00000049]    vm.br ^00000064(%r1(null)->%r2, %i6(0)->%i12, %i7(0)->%i13, %i6(0)->%i14, %i7(0)->%i15)
+[module.__init+00000065]    %i16 = vm.cmp.nz.ref %r2(null)
+[module.__init+0000006A]    %i16 = vm.xor.i32 %i16(0), %i0(1)
+[module.__init+00000071]    %i17 = vm.cmp.lt.i64.s %i12:13(0), %i10:11(1)
+[module.__init+00000078]    %i17 = vm.and.i32 %i16(1), %i17(1)
+[module.__init+0000007F]    vm.cond_br %i17(1), ^0000008E(), ^00000158()
+[module.__init+0000008F]    %i16 = vm.trunc.i64.i32 %i12:13(0)
+[module.__init+00000094]    %r2 = vm.call @hal.devices.get(%i16(0))
+[module.__init+000000A2]    %r3 = vm.const.ref.rodata 0  // 0x0x616486d399ec 13b
+[module.__init+000000A9]    %r4 = vm.const.ref.rodata 1  // 0x0x616486d39a08 4b
+[module.__init+000000B0]    %i16, %i18 = vm.call @hal.device.query.i64(%r2(!hal.device/0x0x6164876c6220), %r3(!vm.buffer/0x0x616486d370c0), %r4(!vm.buffer/0x0x616486d370e8))
+[module.__init+000000C4]    %i17 = vm.cmp.nz.i64 %i18:19(1)
+[module.__init+000000C9]    %i16 = vm.select.i32 %i16(1) ? %i17(1) : %i5(0)
+[module.__init+000000D2]    vm.cond_br %i16(1), ^000000E6(), ^0000011E(%i5(0)->%i16)
+[module.__init+000000E7]    %r3 = vm.const.ref.rodata 2  // 0x0x616486d39a18 21b
+[module.__init+000000EE]    %r4 = vm.const.ref.rodata 3  // 0x0x616486d39a3c 13b
+[module.__init+000000F5]    %i16, %i18 = vm.call @hal.device.query.i64(%r2(!hal.device/0x0x6164876c6220), %r3(!vm.buffer/0x0x616486d37110), %r4(!vm.buffer/0x0x616486d37138))
+[module.__init+00000108]    %i17 = vm.cmp.nz.i64 %i18:19(1)
+[module.__init+0000010D]    %i16 = vm.select.i32 %i16(1) ? %i17(1) : %i5(0)
+[module.__init+00000116]    vm.br ^0000011E()
+[module.__init+0000011F]    %i17 = vm.cmp.eq.i64 %i14:15(0), %i6:7(0)
+[module.__init+00000126]    %i18:19 = vm.select.i64 %i16(1) ? %i8:9(1) : %i6:7(0)
+[module.__init+0000012F]    %i14:15 = vm.add.i64 %i14:15(0), %i18:19(1)
+[module.__init+00000136]    %i16 = vm.and.i32 %i16(1), %i17(1)
+[module.__init+0000013D]    %r2 = vm.select.ref %i16(1) ? %r2(!hal.device/0x0x6164876c6220) : %r1(null) -> !hal.device
+[module.__init+0000014A]    %i12:13 = vm.add.i64 %i12:13(0), %i8:9(1)
+[module.__init+00000151]    vm.br ^00000064()
+[module.__init+00000065]    %i16 = vm.cmp.nz.ref %r2(!hal.device/0x0x6164876c6220)
+[module.__init+0000006A]    %i16 = vm.xor.i32 %i16(1), %i0(1)
+[module.__init+00000071]    %i17 = vm.cmp.lt.i64.s %i12:13(1), %i10:11(1)
+[module.__init+00000078]    %i17 = vm.and.i32 %i16(0), %i17(0)
+[module.__init+0000007F]    vm.cond_br %i17(0), ^0000008E(), ^00000158()
+[module.__init+00000159]    vm.cond_br %i16(0), ^00000168(), ^000003C2()
+[module.__init+000003C3]    %r1 = vm.const.ref.rodata 2  // 0x0x616486d39a18 21b
+[module.__init+000003CA]    %r3 = vm.const.ref.rodata 3  // 0x0x616486d39a3c 13b
+[module.__init+000003D1]    %i0, %i8 = vm.call @hal.device.query.i64(%r2(!hal.device/0x0x6164876c6220), %r1(!vm.buffer/0x0x616486d37110), %r3(!vm.buffer/0x0x616486d37138))
+[module.__init+000003E4]    %i4 = vm.cmp.nz.i64 %i8:9(1)
+[module.__init+000003E9]    %i0 = vm.select.i32 %i0(1) ? %i4(1) : %i5(0)
+[module.__init+000003F2]    %i2:3 = vm.select.i64 %i0(1) ? %i6:7(0) : %i2:3(-1)
+[module.__init+000003FB]    %i0 = vm.cmp.eq.i64 %i2:3(0), %i6:7(0)
+[module.__init+00000402]    vm.global.store.ref %r2(!hal.device/0x0x6164876c6220), .refs[0] : !hal.device
+[module.__init+0000040D]    vm.cond_br %i0(1), ^0000041C(), ^0000045C()
+[module.__init+0000041D]    %r1 = vm.const.ref.rodata 4  // 0x0x616486d3b060 22380b
+[module.__init+00000424]    %r0 = vm.call @hal.executable.create(%r2(!hal.device/0x0x6164876c6220), %r3(!vm.buffer/0x0x616486d37138), %r1(!vm.buffer/0x0x616486d37160), %r0(null))
+[module.__init+00000438]    vm.global.store.ref %r0(!hal.executable/0x0x616488094490), .refs[1] : !hal.executable
+[module.__init+00000443]    %r0 = vm.call @module.__main_memoize_apply()
+[module.__main_memoize_apply+00000000]    <block>
+[module.__main_memoize_apply+00000001]    %i0 = vm.const.i32 5  // 0x00000005
+[module.__main_memoize_apply+00000008]    %i1 = vm.const.i32 13  // 0x0000000D
+[module.__main_memoize_apply+0000000F]    %i2 = vm.const.i32 28  // 0x0000001C
+[module.__main_memoize_apply+00000016]    %i3 = vm.const.i32 1  // 0x00000001
+[module.__main_memoize_apply+0000001D]    %i4 = vm.const.i32 2  // 0x00000002
+[module.__main_memoize_apply+00000024]    %r0 = vm.const.ref.zero
+[module.__main_memoize_apply+00000027]    %i5 = vm.const.i32 4  // 0x00000004
+[module.__main_memoize_apply+0000002E]    %i6 = vm.const.i32 3  // 0x00000003
+[module.__main_memoize_apply+00000035]    %i8:9 = vm.const.i64 200  // 0x00000000000000C8
+[module.__main_memoize_apply+00000040]    %i10:11 = vm.const.i64 13504  // 0x00000000000034C0
+[module.__main_memoize_apply+0000004B]    %i7 = vm.const.i32 1054280253  // 0x3ED70A3D
+[module.__main_memoize_apply+00000052]    %i12:13 = vm.const.i64 11840  // 0x0000000000002E40
+[module.__main_memoize_apply+0000005D]    %i14:15 = vm.const.i64 1664  // 0x0000000000000680
+[module.__main_memoize_apply+00000068]    %i16:17 = vm.const.i64 160  // 0x00000000000000A0
+[module.__main_memoize_apply+00000073]    %i18:19 = vm.const.i64 1472  // 0x00000000000005C0
+[module.__main_memoize_apply+0000007E]    %i20:21 = vm.const.i64 40  // 0x0000000000000028
+[module.__main_memoize_apply+00000089]    %i22:23 = vm.const.i64 1408  // 0x0000000000000580
+[module.__main_memoize_apply+00000094]    %i24:25 = vm.const.i64 128  // 0x0000000000000080
+[module.__main_memoize_apply+0000009F]    %i26:27 = vm.const.i64 20  // 0x0000000000000014
+[module.__main_memoize_apply+000000AA]    %i28:29 = vm.const.i64 13760  // 0x00000000000035C0
+[module.__main_memoize_apply+000000B5]    %i30:31 = vm.const.i64 80  // 0x0000000000000050
+[module.__main_memoize_apply+000000C0]    %i32 = vm.const.i32.zero
+[module.__main_memoize_apply+000000C3]    %i34:35 = vm.const.i64 1280  // 0x0000000000000500
+[module.__main_memoize_apply+000000CE]    %i36:37 = vm.const.i64.zero
+[module.__main_memoize_apply+000000D1]    %i38:39 = vm.const.i64 -1  // 0xFFFFFFFFFFFFFFFF
+[module.__main_memoize_apply+000000DC]    %r1 = vm.global.load.ref .refs[0](!hal.device/0x0x6164876c6220) : !hal.device
+[module.__main_memoize_apply+000000E7]    %r2 = vm.global.load.ref .refs[1](!hal.executable/0x0x616488094490) : !hal.executable
+[module.__main_memoize_apply+000000F2]    %r1 = vm.call @hal.command_buffer.create(%r1(!hal.device/0x0x6164876c6220), %i32(0), %i6(3), %i38(4294967295), %i5(4))
+[module.__main_memoize_apply+00000108]    vm.call @hal.command_buffer.fill_buffer(%r1(!hal.command_buffer/0x0x6164880a2fe0), %r0(null), %i36(0), %i34(1280), %i4(2), %i32(0), %i3(1))
+[module.__main_memoize_apply+00000120]    vm.call @hal.command_buffer.execution_barrier(%r1(!hal.command_buffer/0x0x6164880a2fe0), %i2(28), %i1(13), %i32(0))
+[module.__main_memoize_apply+00000132]    vm.call.varadic @hal.command_buffer.dispatch(%r1(!hal.command_buffer/0x0x6164880a2fe0), %r2(!hal.executable/0x0x616488094490), %i32(0), %i0(5), %i3(1), %i3(1), %i36(0), %i32(0), %i32(0), %r0(null), %i36(0), %i30(80), %i32(0), %i4(2), %r0(null), %i36(0), %i28(13760))
+[module.__main_memoize_apply+00000172]    vm.call.varadic @hal.command_buffer.dispatch(%r1(!hal.command_buffer/0x0x6164880a2fe0), %r2(!hal.executable/0x0x616488094490), %i3(1), %i3(1), %i3(1), %i3(1), %i36(0), %i32(0), %i3(1), %r0(null), %i36(0), %i26(20), %i32(0), %i6(3), %r0(null), %i36(0), %i24(128))
+[module.__main_memoize_apply+000001B2]    vm.call.varadic @hal.command_buffer.dispatch(%r1(!hal.command_buffer/0x0x6164880a2fe0), %r2(!hal.executable/0x0x616488094490), %i4(2), %i3(1), %i3(1), %i3(1), %i36(0), %i32(0), %i3(1), %r0(null), %i36(0), %i26(20), %i32(0), %i6(3), %r0(null), %i36(0), %i24(128))
+[module.__main_memoize_apply+000001F2]    vm.call @hal.command_buffer.execution_barrier(%r1(!hal.command_buffer/0x0x6164880a2fe0), %i2(28), %i1(13), %i32(0))
+[module.__main_memoize_apply+00000204]    vm.call.varadic @hal.command_buffer.dispatch(%r1(!hal.command_buffer/0x0x6164880a2fe0), %r2(!hal.executable/0x0x616488094490), %i6(3), %i3(1), %i3(1), %i3(1), %i36(0), %i32(0), %i6(3), %r0(null), %i36(0), %i24(128), %i32(0), %i4(2), %r0(null), %i36(0), %i28(13760), %i32(0), %i4(2), %r0(null), %i36(0), %i28(13760))
+[module.__main_memoize_apply+0000024E]    vm.call @hal.command_buffer.fill_buffer(%r1(!hal.command_buffer/0x0x6164880a2fe0), %r0(null), %i22(1408), %i20(40), %i4(2), %i32(0), %i3(1))
+[module.__main_memoize_apply+00000266]    vm.call @hal.command_buffer.fill_buffer(%r1(!hal.command_buffer/0x0x6164880a2fe0), %r0(null), %i18(1472), %i16(160), %i4(2), %i32(0), %i3(1))
+[module.__main_memoize_apply+0000027E]    vm.call @hal.command_buffer.fill_buffer(%r1(!hal.command_buffer/0x0x6164880a2fe0), %r0(null), %i14(1664), %i12(11840), %i4(2), %i7(1054280253), %i5(4))
+[module.__main_memoize_apply+00000296]    vm.call @hal.command_buffer.fill_buffer(%r1(!hal.command_buffer/0x0x6164880a2fe0), %r0(null), %i10(13504), %i8(200), %i4(2), %i32(0), %i3(1))
+[module.__main_memoize_apply+000002AE]    vm.call @hal.command_buffer.execution_barrier(%r1(!hal.command_buffer/0x0x6164880a2fe0), %i2(28), %i1(13), %i32(0))
+[module.__main_memoize_apply+000002C0]    vm.call @hal.command_buffer.finalize(%r1(!hal.command_buffer/0x0x6164880a2fe0))
+[module.__main_memoize_apply+000002CC]    vm.return %r1(!hal.command_buffer/0x0x6164880a2fe0)
+[module.__init+0000044E]    vm.global.store.ref %r0(!hal.command_buffer/0x0x6164880a2fe0), .refs[2] : !hal.command_buffer
+[module.__init+00000459]    vm.return 
+EXEC @main
+[module.main+00000000]    <block>
+[module.main+00000001]    %i0 = vm.const.i32 10  // 0x0000000A
+[module.main+00000008]    %i1 = vm.const.i32 8  // 0x00000008
+[module.main+0000000F]    %i2 = vm.const.i32 2  // 0x00000002
+[module.main+00000016]    %i3 = vm.const.i32 7  // 0x00000007
+[module.main+0000001D]    %i4 = vm.const.i32 6  // 0x00000006
+[module.main+00000024]    %i5 = vm.const.i32 5  // 0x00000005
+[module.main+0000002B]    %i6:7 = vm.const.i64 -64  // 0xFFFFFFFFFFFFFFC0
+[module.main+00000036]    %i8:9 = vm.const.i64 63  // 0x000000000000003F
+[module.main+00000041]    %i10 = vm.const.i32 9  // 0x00000009
+[module.main+00000048]    %i11 = vm.const.i32 13  // 0x0000000D
+[module.main+0000004F]    %i12 = vm.const.i32 28  // 0x0000001C
+[module.main+00000056]    %i13 = vm.const.i32 4  // 0x00000004
+[module.main+0000005D]    %i14 = vm.const.i32 3  // 0x00000003
+[module.main+00000064]    %i15 = vm.const.i32 32  // 0x00000020
+[module.main+0000006B]    %i16 = vm.const.i32 150998019  // 0x09000C03
+[module.main+00000072]    %i17 = vm.const.i32 86  // 0x00000056
+[module.main+00000079]    %i18 = vm.const.i32 48  // 0x00000030
+[module.main+00000080]    %i19 = vm.const.i32.zero
+[module.main+00000083]    %i20 = vm.const.i32 3075  // 0x00000C03
+[module.main+0000008A]    %i21 = vm.const.i32 16  // 0x00000010
+[module.main+00000091]    %i22 = vm.const.i32 1  // 0x00000001
+[module.main+00000098]    %i23 = vm.const.i32 553648160  // 0x21000020
+[module.main+0000009F]    %i24:25 = vm.const.i64 40  // 0x0000000000000028
+[module.main+000000AA]    %i26:27 = vm.const.i64 1  // 0x0000000000000001
+[module.main+000000B5]    %i28:29 = vm.const.i64 4  // 0x0000000000000004
+[module.main+000000C0]    %i30:31 = vm.const.i64 5  // 0x0000000000000005
+[module.main+000000CB]    %i32:33 = vm.const.i64 2  // 0x0000000000000002
+[module.main+000000D6]    %i34:35 = vm.const.i64 200  // 0x00000000000000C8
+[module.main+000000E1]    %i36:37 = vm.const.i64 20  // 0x0000000000000014
+[module.main+000000EC]    %i38:39 = vm.const.i64 80  // 0x0000000000000050
+[module.main+000000F7]    %i40:41 = vm.const.i64 1280  // 0x0000000000000500
+[module.main+00000102]    %i42:43 = vm.const.i64 256  // 0x0000000000000100
+[module.main+0000010D]    %i44:45 = vm.const.i64.zero
+[module.main+00000110]    %i46:47 = vm.const.i64 1344  // 0x0000000000000540
+[module.main+0000011B]    %i48:49 = vm.const.i64 1408  // 0x0000000000000580
+[module.main+00000126]    %i50:51 = vm.const.i64 1472  // 0x00000000000005C0
+[module.main+00000131]    %i52:53 = vm.const.i64 1664  // 0x0000000000000680
+[module.main+0000013C]    %i54:55 = vm.const.i64 13504  // 0x00000000000034C0
+[module.main+00000147]    %i56:57 = vm.const.i64 13760  // 0x00000000000035C0
+[module.main+00000152]    %i58:59 = vm.const.i64 64  // 0x0000000000000040
+[module.main+0000015D]    %i60:61 = vm.const.i64 128  // 0x0000000000000080
+[module.main+00000168]    %i62:63 = vm.const.i64 192  // 0x00000000000000C0
+[module.main+00000173]    %i64:65 = vm.const.i64 576  // 0x0000000000000240
+[module.main+0000017E]    %i66:67 = vm.const.i64 -1  // 0xFFFFFFFFFFFFFFFF
+[module.main+00000189]    %r2 = vm.const.ref.zero
+[module.main+0000018C]    %i68 = vm.const.i32 -1  // 0xFFFFFFFF
+[module.main+00000193]    %i70:71 = vm.const.i64 10  // 0x000000000000000A
+[module.main+0000019E]    %r3 = vm.global.load.ref .refs[0](!hal.device/0x0x6164876c6220) : !hal.device
+[module.main+000001A9]    %r4 = vm.global.load.ref .refs[1](!hal.executable/0x0x616488094490) : !hal.executable
+[module.main+000001B4]    %r5 = vm.global.load.ref .refs[2](!hal.command_buffer/0x0x6164880a2fe0) : !hal.command_buffer
+[module.main+000001BF]    %r6 = vm.const.ref.rodata 5  // 0x0x616486d39a6c 6b
+[module.main+000001C6]    vm.call.varadic @hal.buffer_view.assert(%r0(!hal.buffer_view/0x0x6164881168f0), %r6(!vm.buffer/0x0x616486d37188), %i23(553648160), %i22(1), %i26(1), %i30(5))
+[module.main+000001E8]    %r0 = vm.call @hal.buffer_view.buffer(%r0(!hal.buffer_view/0x0x6164881168f0))
+[module.main+000001F6]    %r6 = vm.call @hal.device.allocator(%r3(!hal.device/0x0x6164876c6220))
+[module.main+00000204]    %r7 = vm.const.ref.rodata 6  // 0x0x616486d39a80 6b
+[module.main+0000020B]    vm.call @hal.buffer.assert(%r0(!hal.buffer/0x0x616488116860), %r7(!vm.buffer/0x0x616486d371b0), %r6(!hal.allocator/0x0x61648808e310), %i36(20), %i21(16), %i20(3075))
+[module.main+00000220]    %r8 = vm.const.ref.rodata 7  // 0x0x616486d39a94 6b
+[module.main+00000227]    vm.call.varadic @hal.buffer_view.assert(%r1(!hal.buffer_view/0x0x616488117040), %r8(!vm.buffer/0x0x616486d371d8), %i23(553648160), %i22(1), %i26(1), %i30(5), %i32(2), %i32(2))
+[module.main+0000024C]    %r1 = vm.call @hal.buffer_view.buffer(%r1(!hal.buffer_view/0x0x616488117040))
+[module.main+0000025A]    vm.call @hal.buffer.assert(%r1(!hal.buffer/0x0x616488116fb0), %r7(!vm.buffer/0x0x616486d371b0), %r6(!hal.allocator/0x0x61648808e310), %i38(80), %i21(16), %i20(3075))
+[module.main+00000270]    %r6 = vm.call @hal.fence.create(%r3(!hal.device/0x0x6164876c6220), %i19(0))
+[module.main+00000280]    %r7 = vm.call @hal.device.queue.alloca(%r3(!hal.device/0x0x6164876c6220), %i66(4294967295), %r2(null), %r6(!hal.fence/0x0x616488118710), %i19(0), %i18(48), %i20(3075), %i56(13760))
+[module.main+0000029C]    %r8 = vm.call @hal.fence.create(%r3(!hal.device/0x0x6164876c6220), %i19(0))
+[module.main+000002AC]    %r2 = vm.call @hal.device.queue.alloca(%r3(!hal.device/0x0x6164876c6220), %i66(4294967295), %r2(null), %r8(!hal.fence/0x0x616488399500), %i19(0), %i18(48), %i20(3075), %i60(128))
+[module.main+000002C8]    %r6 = vm.call.varadic @hal.fence.join(%r6(!hal.fence/0x0x616488118710), %r8(!hal.fence/0x0x616488399500))
+[module.main+000002DC]    %r8 = vm.call @hal.fence.create(%r3(!hal.device/0x0x6164876c6220), %i19(0))
+[module.main+000002EC]    vm.call.varadic @hal.device.queue.execute.indirect(%r3(!hal.device/0x0x6164876c6220), %i66(4294967295), %r6(!hal.fence/0x0x616488399920), %r8(!hal.fence/0x0x6164883999e0), %r5(!hal.command_buffer/0x0x6164880a2fe0), %r1(!hal.buffer/0x0x616488116fb0), %i44(0), %i38(80), %r0(!hal.buffer/0x0x616488116860), %i44(0), %i36(20), %r7(!hal.buffer/0x0x616488399400), %i44(0), %i56(13760), %r2(!hal.buffer/0x0x616488399890), %i44(0), %i60(128))
+[module.main+00000326]    %r1 = vm.call @hal.fence.create(%r3(!hal.device/0x0x6164876c6220), %i19(0))
+[module.main+00000336]    vm.call @hal.device.queue.dealloca(%r3(!hal.device/0x0x6164876c6220), %i66(4294967295), %r8(!hal.fence/0x0x6164883999e0), %r1(!hal.fence/0x0x6164883a1d10), %r2(!hal.buffer/0x0x616488399890))
+[module.main+0000034A]    vm.br ^00000422(%i44(0)->%i76, %i45(0)->%i77, %i44(0)->%i78, %i45(0)->%i79, %i54(13504)->%i84, %i55(0)->%i85, %i46(1344)->%i38, %i47(0)->%i39, %i50(1472)->%i46, %i51(0)->%i47, %i52(1664)->%i50, %i53(0)->%i51, %i48(1408)->%i54, %i49(0)->%i55, %i48(1408)->%i72, %i49(0)->%i73, %r0(!hal.buffer/0x0x616488116860)->%r16, %r7(!hal.buffer/0x0x616488399400)->%r0, %r7(!hal.buffer/0x0x616488399400)->%r2, %r7(!hal.buffer/0x0x616488399400)->%r6, %r7(!hal.buffer/0x0x616488399400)->%r8, %r7(!hal.buffer/0x0x616488399400)->%r10, %r7(!hal.buffer/0x0x616488399400)->%r12, %r7(!hal.buffer/0x0x616488399400)->%r14, %r7(!hal.buffer/0x0x616488399400)->%r17, %r1(!hal.fence/0x0x6164883a1d10)->%r5, %r1(!hal.fence/0x0x6164883a1d10)->%r7, %r1(!hal.fence/0x0x6164883a1d10)->%r9, %r1(!hal.fence/0x0x6164883a1d10)->%r11, %r1(!hal.fence/0x0x6164883a1d10)->%r13, %r1(!hal.fence/0x0x6164883a1d10)->%r15, %r1(!hal.fence/0x0x6164883a1d10)->%r18, %i36(20)->%i80, %i37(0)->%i81, %i34(200)->%i86, %i35(0)->%i87, %i40(1280)->%i34, %i41(0)->%i35, %i56(13760)->%i32, %i57(0)->%i33, %i56(13760)->%i36, %i57(0)->%i37, %i56(13760)->%i40, %i57(0)->%i41, %i56(13760)->%i48, %i57(0)->%i49, %i56(13760)->%i52, %i57(0)->%i53, %i56(13760)->%i74, %i57(0)->%i75, %i56(13760)->%i82, %i57(0)->%i83)
+[module.main+00000423]    %r19 = vm.call.varadic @hal.fence.join(%r1(!hal.fence/0x0x6164883a1d10), %r5(!hal.fence/0x0x6164883a1d10))
+[module.main+00000436]    %r20 = vm.call @hal.fence.create(%r3(!hal.device/0x0x6164876c6220), %i19(0))
+[module.main+00000446]    %r21 = vm.call @hal.device.queue.alloca(%r3(!hal.device/0x0x6164876c6220), %i66(4294967295), %r19(!hal.fence/0x0x6164883a2160), %r20(!hal.fence/0x0x6164883a21b0), %i19(0), %i17(86), %i16(150998019), %i26(1))
+[module.main+00000462]    %r22 = vm.call @hal.fence.create(%r3(!hal.device/0x0x6164876c6220), %i19(0))
+[module.main+00000472]    %r19 = vm.call @hal.device.queue.alloca(%r3(!hal.device/0x0x6164876c6220), %i66(4294967295), %r19(!hal.fence/0x0x6164883a2160), %r22(!hal.fence/0x0x6164883a32c0), %i19(0), %i18(48), %i20(3075), %i58(64))
+[module.main+0000048E]    %r20 = vm.call.varadic @hal.fence.join(%r20(!hal.fence/0x0x6164883a21b0), %r22(!hal.fence/0x0x6164883a32c0))
+[module.main+000004A2]    %i21 = vm.trunc.i64.i32 %i34:35(1280)
+[module.main+000004A7]    %i34:35 = vm.shr.i64.u %i34:35(1280), %i15(32)
+[module.main+000004AE]    %i34 = vm.trunc.i64.i32 %i34:35(0)
+[module.main+000004B3]    %i35 = vm.trunc.i64.i32 %i38:39(1344)
+[module.main+000004B8]    %i88:89 = vm.shr.i64.u %i38:39(1344), %i15(32)
+[module.main+000004BF]    %i69 = vm.trunc.i64.i32 %i88:89(0)
+[module.main+000004C4]    %r22 = vm.call @hal.command_buffer.create(%r3(!hal.device/0x0x6164876c6220), %i22(1), %i14(3), %i66(4294967295), %i19(0))
+[module.main+000004DA]    vm.call.varadic @hal.command_buffer.dispatch(%r22(!hal.command_buffer/0x0x6164883a3620), %r4(!hal.executable/0x0x616488094490), %i13(4), %i22(1), %i22(1), %i22(1), %i44(0), %i21(1280), %i34(0), %i35(1344), %i69(0), %i19(0), %i19(0), %r0(!hal.buffer/0x0x616488399400), %i44(0), %i32(13760), %i19(0), %i19(0), %r2(!hal.buffer/0x0x616488399400), %i44(0), %i36(13760), %i19(0), %i19(0), %r19(!hal.buffer/0x0x6164883a3540), %i44(0), %i58(64))
+[module.main+0000052C]    vm.call @hal.command_buffer.execution_barrier(%r22(!hal.command_buffer/0x0x6164883a3620), %i12(28), %i11(13), %i19(0))
+[module.main+0000053E]    vm.call @hal.command_buffer.copy_buffer(%r22(!hal.command_buffer/0x0x6164883a3620), %i19(0), %i19(0), %r19(!hal.buffer/0x0x6164883a3540), %i44(0), %r21(!hal.buffer/0x0x6164883a3230), %i44(0), %i26(1))
+[module.main+00000558]    vm.call @hal.command_buffer.execution_barrier(%r22(!hal.command_buffer/0x0x6164883a3620), %i12(28), %i11(13), %i19(0))
+[module.main+0000056A]    vm.call @hal.command_buffer.finalize(%r22(!hal.command_buffer/0x0x6164883a3620))
+[module.main+00000576]    %r23 = vm.call @hal.fence.create(%r3(!hal.device/0x0x6164876c6220), %i19(0))
+[module.main+00000586]    vm.call.varadic @hal.device.queue.execute(%r3(!hal.device/0x0x6164876c6220), %i66(4294967295), %r20(!hal.fence/0x0x6164883a35d0), %r23(!hal.fence/0x0x6164883a3740), %r22(!hal.command_buffer/0x0x6164883a3620))
+[module.main+000005A6]    %r20 = vm.call @hal.fence.create(%r3(!hal.device/0x0x6164876c6220), %i19(0))
+[module.main+000005B6]    vm.call @hal.device.queue.dealloca(%r3(!hal.device/0x0x6164876c6220), %i66(4294967295), %r23(!hal.fence/0x0x6164883a3740), %r20(!hal.fence/0x0x6164883a3a00), %r19(!hal.buffer/0x0x6164883a3540))
+[module.main+000005CA]    %i35 = vm.call.varadic @hal.fence.await(%i68(4294967295), %r20(!hal.fence/0x0x6164883a3a00))
+[module.main+000005E0]    vm.cond_br %i35(0), ^00000616(%i35(0)->%i0), ^000005F4()
+[module.main+000005F5]    %i35 = vm.call @hal.buffer.load(%r21(!hal.buffer/0x0x6164883a3230), %i44(0), %i22(1))
+[module.main+00000606]    vm.cond_br %i35(1), ^00000637(), ^00000C20()
+[module.main+00000638]    %r19 = vm.call @hal.fence.create(%r3(!hal.device/0x0x6164876c6220), %i19(0))
+[module.main+00000648]    %r20 = vm.call @hal.device.queue.alloca(%r3(!hal.device/0x0x6164876c6220), %i66(4294967295), %r1(!hal.fence/0x0x6164883a1d10), %r19(!hal.fence/0x0x6164883a3ab0), %i19(0), %i17(86), %i16(150998019), %i28(4))
+[module.main+00000664]    %r21 = vm.call @hal.fence.create(%r3(!hal.device/0x0x6164876c6220), %i19(0))
+[module.main+00000674]    %r22 = vm.call @hal.device.queue.alloca(%r3(!hal.device/0x0x6164876c6220), %i66(4294967295), %r1(!hal.fence/0x0x6164883a1d10), %r21(!hal.fence/0x0x6164883a41f0), %i19(0), %i18(48), %i20(3075), %i58(64))
+[module.main+00000690]    %r19 = vm.call.varadic @hal.fence.join(%r19(!hal.fence/0x0x6164883a3ab0), %r21(!hal.fence/0x0x6164883a41f0))
+[module.main+000006A4]    %r21 = vm.call @hal.command_buffer.create(%r3(!hal.device/0x0x6164876c6220), %i22(1), %i14(3), %i66(4294967295), %i19(0))
+[module.main+000006BA]    vm.call.varadic @hal.command_buffer.dispatch(%r21(!hal.command_buffer/0x0x6164883a4550), %r4(!hal.executable/0x0x616488094490), %i10(9), %i22(1), %i22(1), %i22(1), %i44(0), %i21(1280), %i34(0), %i19(0), %i19(0), %r0(!hal.buffer/0x0x616488399400), %i44(0), %i32(13760), %i19(0), %i19(0), %r22(!hal.buffer/0x0x6164883a4470), %i44(0), %i58(64))
+[module.main+000006FE]    vm.call @hal.command_buffer.execution_barrier(%r21(!hal.command_buffer/0x0x6164883a4550), %i12(28), %i11(13), %i19(0))
+[module.main+00000710]    vm.call @hal.command_buffer.copy_buffer(%r21(!hal.command_buffer/0x0x6164883a4550), %i19(0), %i19(0), %r22(!hal.buffer/0x0x6164883a4470), %i44(0), %r20(!hal.buffer/0x0x6164883a4160), %i44(0), %i28(4))
+[module.main+0000072A]    vm.call @hal.command_buffer.execution_barrier(%r21(!hal.command_buffer/0x0x6164883a4550), %i12(28), %i11(13), %i19(0))
+[module.main+0000073C]    vm.call @hal.command_buffer.finalize(%r21(!hal.command_buffer/0x0x6164883a4550))
+[module.main+00000748]    %r23 = vm.call @hal.fence.create(%r3(!hal.device/0x0x6164876c6220), %i19(0))
+[module.main+00000758]    vm.call.varadic @hal.device.queue.execute(%r3(!hal.device/0x0x6164876c6220), %i66(4294967295), %r19(!hal.fence/0x0x6164883a4500), %r23(!hal.fence/0x0x6164883a4600), %r21(!hal.command_buffer/0x0x6164883a4550))
+[module.main+00000778]    %r19 = vm.call @hal.fence.create(%r3(!hal.device/0x0x6164876c6220), %i19(0))
+[module.main+00000788]    vm.call @hal.device.queue.dealloca(%r3(!hal.device/0x0x6164876c6220), %i66(4294967295), %r23(!hal.fence/0x0x6164883a4600), %r19(!hal.fence/0x0x6164883a3740), %r22(!hal.buffer/0x0x6164883a4470))
+[module.main+0000079C]    %i35 = vm.call.varadic @hal.fence.await(%i68(4294967295), %r19(!hal.fence/0x0x6164883a3740))
+[module.main+000007B2]    vm.cond_br %i35(0), ^00000616(%i35(0)->%i0), ^000007C6()
+[module.main+000007C7]    %i35 = vm.call @hal.buffer.load(%r20(!hal.buffer/0x0x6164883a4160), %i44(0), %i13(4))
+[module.main+000007D8]    %i88:89 = vm.ext.i32.i64.s %i35(0)
+[module.main+000007DD]    %i88:89 = vm.max.i64.s %i88:89(0), %i44:45(0)
+[module.main+000007E4]    %i88:89 = vm.min.i64.s %i88:89(0), %i28:29(4)
+[module.main+000007EB]    %r1 = vm.call.varadic @hal.fence.join(%r1(!hal.fence/0x0x6164883a1d10), %r15(!hal.fence/0x0x6164883a1d10), %r13(!hal.fence/0x0x6164883a1d10), %r9(!hal.fence/0x0x6164883a1d10), %r7(!hal.fence/0x0x6164883a1d10), %r11(!hal.fence/0x0x6164883a1d10), %r18(!hal.fence/0x0x6164883a1d10))
+[module.main+00000808]    %r11 = vm.call @hal.fence.create(%r3(!hal.device/0x0x6164876c6220), %i19(0))
+[module.main+00000818]    %r13 = vm.call @hal.device.queue.alloca(%r3(!hal.device/0x0x6164876c6220), %i66(4294967295), %r1(!hal.fence/0x0x6164883a4850), %r11(!hal.fence/0x0x6164883a4960), %i19(0), %i18(48), %i20(3075), %i62(192))
+[module.main+00000834]    %i90:91 = vm.add.i64 %i80:81(20), %i8:9(63)
+[module.main+0000083B]    %i90:91 = vm.and.i64 %i90:91(83), %i6:7(-64)
+[module.main+00000842]    %i90:91 = vm.add.i64 %i90:91(64), %i64:65(576)
+[module.main+00000849]    %r18 = vm.call @hal.fence.create(%r3(!hal.device/0x0x6164876c6220), %i19(0))
+[module.main+00000858]    %r1 = vm.call @hal.device.queue.alloca(%r3(!hal.device/0x0x6164876c6220), %i66(4294967295), %r1(!hal.fence/0x0x6164883a4850), %r18(!hal.fence/0x0x6164883a4ce0), %i19(0), %i18(48), %i20(3075), %i90(640))
+[module.main+00000874]    %r11 = vm.call.varadic @hal.fence.join(%r11(!hal.fence/0x0x6164883a4960), %r18(!hal.fence/0x0x6164883a4ce0))
+[module.main+00000888]    %i35 = vm.trunc.i64.i32 %i76:77(0)
+[module.main+0000088D]    %i92:93 = vm.shr.i64.u %i76:77(0), %i15(32)
+[module.main+00000894]    %i69 = vm.trunc.i64.i32 %i92:93(0)
+[module.main+00000899]    %i92 = vm.trunc.i64.i32 %i50:51(1664)
+[module.main+0000089E]    %i94:95 = vm.shr.i64.u %i50:51(1664), %i15(32)
+[module.main+000008A5]    %i93 = vm.trunc.i64.i32 %i94:95(0)
+[module.main+000008AA]    %i94 = vm.trunc.i64.i32 %i46:47(1472)
+[module.main+000008AF]    %i96:97 = vm.shr.i64.u %i46:47(1472), %i15(32)
+[module.main+000008B6]    %i95 = vm.trunc.i64.i32 %i96:97(0)
+[module.main+000008BB]    %i96 = vm.trunc.i64.i32 %i72:73(1408)
+[module.main+000008C0]    %i98:99 = vm.shr.i64.u %i72:73(1408), %i15(32)
+[module.main+000008C7]    %i97 = vm.trunc.i64.i32 %i98:99(0)
+[module.main+000008CC]    %i98 = vm.trunc.i64.i32 %i54:55(1408)
+[module.main+000008D1]    %i54:55 = vm.shr.i64.u %i54:55(1408), %i15(32)
+[module.main+000008D8]    %i54 = vm.trunc.i64.i32 %i54:55(0)
+[module.main+000008DD]    %i55 = vm.trunc.i64.i32 %i84:85(13504)
+[module.main+000008E2]    %i100:101 = vm.shr.i64.u %i84:85(13504), %i15(32)
+[module.main+000008E9]    %i99 = vm.trunc.i64.i32 %i100:101(0)
+[module.main+000008EE]    %i100 = vm.trunc.i64.i32 %i88:89(0)
+[module.main+000008F3]    %i88:89 = vm.shr.i64.u %i88:89(0), %i15(32)
+[module.main+000008FA]    %i88 = vm.trunc.i64.i32 %i88:89(0)
+[module.main+000008FF]    %r18 = vm.call @hal.command_buffer.create(%r3(!hal.device/0x0x6164876c6220), %i22(1), %i14(3), %i66(4294967295), %i19(0))
+[module.main+00000914]    vm.call @hal.command_buffer.execution_barrier(%r18(!hal.command_buffer/0x0x6164883a5150), %i12(28), %i11(13), %i19(0))
+[module.main+00000926]    vm.call @hal.command_buffer.copy_buffer(%r18(!hal.command_buffer/0x0x6164883a5150), %i19(0), %i19(0), %r16(!hal.buffer/0x0x616488116860), %i78(0), %r1(!hal.buffer/0x0x6164883a5070), %i64(576), %i80(20))
+[module.main+00000940]    vm.call @hal.command_buffer.execution_barrier(%r18(!hal.command_buffer/0x0x6164883a5150), %i12(28), %i11(13), %i19(0))
+[module.main+00000952]    vm.call.varadic @hal.command_buffer.dispatch(%r18(!hal.command_buffer/0x0x6164883a5150), %r4(!hal.executable/0x0x616488094490), %i5(5), %i22(1), %i22(1), %i22(1), %i44(0), %i21(1280), %i34(0), %i19(0), %i19(0), %r0(!hal.buffer/0x0x616488399400), %i44(0), %i32(13760), %i19(0), %i19(0), %r1(!hal.buffer/0x0x6164883a5070), %i44(0), %i90(640), %i19(0), %i19(0), %r1(!hal.buffer/0x0x6164883a5070), %i44(0), %i90(640), %i19(0), %i19(0), %r13(!hal.buffer/0x0x6164883a4be0), %i44(0), %i62(192))
+[module.main+000009AA]    vm.call.varadic @hal.command_buffer.dispatch(%r18(!hal.command_buffer/0x0x6164883a5150), %r4(!hal.executable/0x0x616488094490), %i4(6), %i22(1), %i22(1), %i22(1), %i44(0), %i35(0), %i69(0), %i21(1280), %i34(0), %i19(0), %i19(0), %r14(!hal.buffer/0x0x616488399400), %i44(0), %i74(13760), %i19(0), %i19(0), %r0(!hal.buffer/0x0x616488399400), %i44(0), %i32(13760), %i19(0), %i19(0), %r1(!hal.buffer/0x0x6164883a5070), %i44(0), %i90(640))
+[module.main+000009FC]    vm.call @hal.command_buffer.copy_buffer(%r18(!hal.command_buffer/0x0x6164883a5150), %i19(0), %i19(0), %r12(!hal.buffer/0x0x616488399400), %i72(1408), %r1(!hal.buffer/0x0x6164883a5070), %i42(256), %i24(40))
+[module.main+00000A16]    vm.call @hal.command_buffer.execution_barrier(%r18(!hal.command_buffer/0x0x6164883a5150), %i12(28), %i11(13), %i19(0))
+[module.main+00000A28]    vm.call.varadic @hal.command_buffer.dispatch(%r18(!hal.command_buffer/0x0x6164883a5150), %r4(!hal.executable/0x0x616488094490), %i3(7), %i2(2), %i22(1), %i22(1), %i44(0), %i92(1664), %i93(0), %i94(1472), %i95(0), %i19(0), %i19(0), %r1(!hal.buffer/0x0x6164883a5070), %i44(0), %i90(640), %i19(0), %i19(0), %r8(!hal.buffer/0x0x616488399400), %i44(0), %i48(13760), %i19(0), %i19(0), %r6(!hal.buffer/0x0x616488399400), %i44(0), %i40(13760), %i19(0), %i19(0), %r1(!hal.buffer/0x0x6164883a5070), %i44(0), %i90(640))
+[module.main+00000A84]    vm.call @hal.command_buffer.execution_barrier(%r18(!hal.command_buffer/0x0x6164883a5150), %i12(28), %i11(13), %i19(0))
+[module.main+00000A96]    vm.call.varadic @hal.command_buffer.dispatch(%r18(!hal.command_buffer/0x0x6164883a5150), %r4(!hal.executable/0x0x616488094490), %i1(8), %i22(1), %i22(1), %i22(1), %i44(0), %i96(1408), %i97(0), %i98(1408), %i54(0), %i19(0), %i19(0), %r1(!hal.buffer/0x0x6164883a5070), %i44(0), %i90(640), %i19(0), %i19(0), %r12(!hal.buffer/0x0x616488399400), %i44(0), %i56(13760), %i19(0), %i19(0), %r10(!hal.buffer/0x0x616488399400), %i44(0), %i52(13760), %i19(0), %i19(0), %r13(!hal.buffer/0x0x6164883a4be0), %i44(0), %i62(192), %i19(0), %i19(0), %r13(!hal.buffer/0x0x6164883a4be0), %i44(0), %i62(192))
+[module.main+00000AFC]    vm.call @hal.command_buffer.execution_barrier(%r18(!hal.command_buffer/0x0x6164883a5150), %i12(28), %i11(13), %i19(0))
+[module.main+00000B0E]    vm.call.varadic @hal.command_buffer.dispatch(%r18(!hal.command_buffer/0x0x6164883a5150), %r4(!hal.executable/0x0x616488094490), %i0(10), %i22(1), %i22(1), %i22(1), %i44(0), %i55(13504), %i99(0), %i100(0), %i88(0), %i19(0), %i19(0), %r13(!hal.buffer/0x0x6164883a4be0), %i44(0), %i62(192), %i19(0), %i19(0), %r17(!hal.buffer/0x0x616488399400), %i44(0), %i82(13760))
+[module.main+00000B56]    vm.call @hal.command_buffer.execution_barrier(%r18(!hal.command_buffer/0x0x6164883a5150), %i12(28), %i11(13), %i19(0))
+[module.main+00000B68]    vm.call @hal.command_buffer.finalize(%r18(!hal.command_buffer/0x0x6164883a5150))
+[module.main+00000B74]    %r0 = vm.call @hal.fence.create(%r3(!hal.device/0x0x6164876c6220), %i19(0))
+[module.main+00000B84]    vm.call.varadic @hal.device.queue.execute(%r3(!hal.device/0x0x6164876c6220), %i66(4294967295), %r11(!hal.fence/0x0x6164883a5100), %r0(!hal.fence/0x0x6164883a4ce0), %r18(!hal.command_buffer/0x0x6164883a5150))
+[module.main+00000BA4]    %r10 = vm.call @hal.fence.create(%r3(!hal.device/0x0x6164876c6220), %i19(0))
+[module.main+00000BB4]    vm.call @hal.device.queue.dealloca(%r3(!hal.device/0x0x6164876c6220), %i66(4294967295), %r0(!hal.fence/0x0x6164883a4ce0), %r10(!hal.fence/0x0x6164883a4960), %r1(!hal.buffer/0x0x6164883a5070))
+[module.main+00000BC8]    vm.br ^00000422(%r10(!hal.fence/0x0x6164883a4960)->%r24, %i60(128)->%i72, %i61(0)->%i73, %i58(64)->%i54, %i59(0)->%i55, %r10(!hal.fence/0x0x6164883a4960)->%r1, %r10(!hal.fence/0x0x6164883a4960)->%r11, %r10(!hal.fence/0x0x6164883a4960)->%r18, %i44(0)->%i34, %i45(0)->%i35, %i62(192)->%i32, %i63(0)->%i33, %i62(192)->%i52, %i63(0)->%i53, %i62(192)->%i56, %i63(0)->%i57, %r13(!hal.buffer/0x0x6164883a4be0)->%r0, %r13(!hal.buffer/0x0x6164883a4be0)->%r10, %r13(!hal.buffer/0x0x6164883a4be0)->%r12, %r24(null)->%r13)
+[module.main+00000423]    %r19 = vm.call.varadic @hal.fence.join(%r1(!hal.fence/0x0x6164883a4960), %r5(!hal.fence/0x0x6164883a1d10))
+[module.main+00000436]    %r20 = vm.call @hal.fence.create(%r3(!hal.device/0x0x6164876c6220), %i19(0))
+[module.main+00000446]    %r21 = vm.call @hal.device.queue.alloca(%r3(!hal.device/0x0x6164876c6220), %i66(4294967295), %r19(!hal.fence/0x0x6164883a54f0), %r20(!hal.fence/0x0x6164883a3740), %i19(0), %i17(86), %i16(150998019), %i26(1))
+[module.main+00000462]    %r22 = vm.call @hal.fence.create(%r3(!hal.device/0x0x6164876c6220), %i19(0))
+[module.main+00000472]    %r19 = vm.call @hal.device.queue.alloca(%r3(!hal.device/0x0x6164876c6220), %i66(4294967295), %r19(!hal.fence/0x0x6164883a54f0), %r22(!hal.fence/0x0x6164883a4ce0), %i19(0), %i18(48), %i20(3075), %i58(64))
+[module.main+0000048E]    %r20 = vm.call.varadic @hal.fence.join(%r20(!hal.fence/0x0x6164883a3740), %r22(!hal.fence/0x0x6164883a4ce0))
+[module.main+000004A2]    %i21 = vm.trunc.i64.i32 %i34:35(0)
+[module.main+000004A7]    %i34:35 = vm.shr.i64.u %i34:35(0), %i15(32)
+[module.main+000004AE]    %i34 = vm.trunc.i64.i32 %i34:35(0)
+[module.main+000004B3]    %i35 = vm.trunc.i64.i32 %i38:39(1344)
+[module.main+000004B8]    %i88:89 = vm.shr.i64.u %i38:39(1344), %i15(32)
+[module.main+000004BF]    %i69 = vm.trunc.i64.i32 %i88:89(0)
+[module.main+000004C4]    %r22 = vm.call @hal.command_buffer.create(%r3(!hal.device/0x0x6164876c6220), %i22(1), %i14(3), %i66(4294967295), %i19(0))
+[module.main+000004DA]    vm.call.varadic @hal.command_buffer.dispatch(%r22(!hal.command_buffer/0x0x6164883a5c60), %r4(!hal.executable/0x0x616488094490), %i13(4), %i22(1), %i22(1), %i22(1), %i44(0), %i21(0), %i34(0), %i35(1344), %i69(0), %i19(0), %i19(0), %r0(!hal.buffer/0x0x6164883a4be0), %i44(0), %i32(192), %i19(0), %i19(0), %r2(!hal.buffer/0x0x616488399400), %i44(0), %i36(13760), %i19(0), %i19(0), %r19(!hal.buffer/0x0x6164883a5bd0), %i44(0), %i58(64))
+[module.main+0000052C]    vm.call @hal.command_buffer.execution_barrier(%r22(!hal.command_buffer/0x0x6164883a5c60), %i12(28), %i11(13), %i19(0))
+[module.main+0000053E]    vm.call @hal.command_buffer.copy_buffer(%r22(!hal.command_buffer/0x0x6164883a5c60), %i19(0), %i19(0), %r19(!hal.buffer/0x0x6164883a5bd0), %i44(0), %r21(!hal.buffer/0x0x6164883a5b40), %i44(0), %i26(1))
+[module.main+00000558]    vm.call @hal.command_buffer.execution_barrier(%r22(!hal.command_buffer/0x0x6164883a5c60), %i12(28), %i11(13), %i19(0))
+[module.main+0000056A]    vm.call @hal.command_buffer.finalize(%r22(!hal.command_buffer/0x0x6164883a5c60))
+[module.main+00000576]    %r23 = vm.call @hal.fence.create(%r3(!hal.device/0x0x6164876c6220), %i19(0))
+[module.main+00000586]    vm.call.varadic @hal.device.queue.execute(%r3(!hal.device/0x0x6164876c6220), %i66(4294967295), %r20(!hal.fence/0x0x6164883a40f0), %r23(!hal.fence/0x0x6164883a4ce0), %r22(!hal.command_buffer/0x0x6164883a5c60))
+[module.main+000005A6]    %r20 = vm.call @hal.fence.create(%r3(!hal.device/0x0x6164876c6220), %i19(0))
+[module.main+000005B6]    vm.call @hal.device.queue.dealloca(%r3(!hal.device/0x0x6164876c6220), %i66(4294967295), %r23(!hal.fence/0x0x6164883a4ce0), %r20(!hal.fence/0x0x6164883a4600), %r19(!hal.buffer/0x0x6164883a5bd0))
+[module.main+000005CA]    %i35 = vm.call.varadic @hal.fence.await(%i68(4294967295), %r20(!hal.fence/0x0x6164883a4600))
+[module.main+000005E0]    vm.cond_br %i35(0), ^00000616(%i35(0)->%i0), ^000005F4()
+[module.main+000005F5]    %i35 = vm.call @hal.buffer.load(%r21(!hal.buffer/0x0x6164883a5b40), %i44(0), %i22(1))
+[module.main+00000606]    vm.cond_br %i35(1), ^00000637(), ^00000C20()
+[module.main+00000638]    %r19 = vm.call @hal.fence.create(%r3(!hal.device/0x0x6164876c6220), %i19(0))
+[module.main+00000648]    %r20 = vm.call @hal.device.queue.alloca(%r3(!hal.device/0x0x6164876c6220), %i66(4294967295), %r1(!hal.fence/0x0x6164883a4960), %r19(!hal.fence/0x0x6164883a3740), %i19(0), %i17(86), %i16(150998019), %i28(4))
+[module.main+00000664]    %r21 = vm.call @hal.fence.create(%r3(!hal.device/0x0x6164876c6220), %i19(0))
+[module.main+00000674]    %r22 = vm.call @hal.device.queue.alloca(%r3(!hal.device/0x0x6164876c6220), %i66(4294967295), %r1(!hal.fence/0x0x6164883a4960), %r21(!hal.fence/0x0x6164883a4600), %i19(0), %i18(48), %i20(3075), %i58(64))
+[module.main+00000690]    %r19 = vm.call.varadic @hal.fence.join(%r19(!hal.fence/0x0x6164883a3740), %r21(!hal.fence/0x0x6164883a4600))
+[module.main+000006A4]    %r21 = vm.call @hal.command_buffer.create(%r3(!hal.device/0x0x6164876c6220), %i22(1), %i14(3), %i66(4294967295), %i19(0))
+[module.main+000006BA]    vm.call.varadic @hal.command_buffer.dispatch(%r21(!hal.command_buffer/0x0x6164883a5780), %r4(!hal.executable/0x0x616488094490), %i10(9), %i22(1), %i22(1), %i22(1), %i44(0), %i21(0), %i34(0), %i19(0), %i19(0), %r0(!hal.buffer/0x0x6164883a4be0), %i44(0), %i32(192), %i19(0), %i19(0), %r22(!hal.buffer/0x0x6164883a65f0), %i44(0), %i58(64))
+[module.main+000006FE]    vm.call @hal.command_buffer.execution_barrier(%r21(!hal.command_buffer/0x0x6164883a5780), %i12(28), %i11(13), %i19(0))
+[module.main+00000710]    vm.call @hal.command_buffer.copy_buffer(%r21(!hal.command_buffer/0x0x6164883a5780), %i19(0), %i19(0), %r22(!hal.buffer/0x0x6164883a65f0), %i44(0), %r20(!hal.buffer/0x0x6164883a6320), %i44(0), %i28(4))
+[module.main+0000072A]    vm.call @hal.command_buffer.execution_barrier(%r21(!hal.command_buffer/0x0x6164883a5780), %i12(28), %i11(13), %i19(0))
+[module.main+0000073C]    vm.call @hal.command_buffer.finalize(%r21(!hal.command_buffer/0x0x6164883a5780))
+[module.main+00000748]    %r23 = vm.call @hal.fence.create(%r3(!hal.device/0x0x6164876c6220), %i19(0))
+[module.main+00000758]    vm.call.varadic @hal.device.queue.execute(%r3(!hal.device/0x0x6164876c6220), %i66(4294967295), %r19(!hal.fence/0x0x6164883a3cd0), %r23(!hal.fence/0x0x6164883a4600), %r21(!hal.command_buffer/0x0x6164883a5780))
+[module.main+00000778]    %r19 = vm.call @hal.fence.create(%r3(!hal.device/0x0x6164876c6220), %i19(0))
+[module.main+00000788]    vm.call @hal.device.queue.dealloca(%r3(!hal.device/0x0x6164876c6220), %i66(4294967295), %r23(!hal.fence/0x0x6164883a4600), %r19(!hal.fence/0x0x6164883a4ce0), %r22(!hal.buffer/0x0x6164883a65f0))
+[module.main+0000079C]    %i35 = vm.call.varadic @hal.fence.await(%i68(4294967295), %r19(!hal.fence/0x0x6164883a4ce0))
+[module.main+000007B2]    vm.cond_br %i35(0), ^00000616(%i35(0)->%i0), ^000007C6()
+[module.main+000007C7]    %i35 = vm.call @hal.buffer.load(%r20(!hal.buffer/0x0x6164883a6320), %i44(0), %i13(4))
+[module.main+000007D8]    %i88:89 = vm.ext.i32.i64.s %i35(1)
+[module.main+000007DD]    %i88:89 = vm.max.i64.s %i88:89(1), %i44:45(0)
+[module.main+000007E4]    %i88:89 = vm.min.i64.s %i88:89(1), %i28:29(4)
+[module.main+000007EB]    %r1 = vm.call.varadic @hal.fence.join(%r1(!hal.fence/0x0x6164883a4960), %r15(!hal.fence/0x0x6164883a1d10), %r13(!hal.fence/0x0x6164883a4960), %r9(!hal.fence/0x0x6164883a1d10), %r7(!hal.fence/0x0x6164883a1d10), %r11(!hal.fence/0x0x6164883a4960), %r18(!hal.fence/0x0x6164883a4960))
+[module.main+00000808]    %r11 = vm.call @hal.fence.create(%r3(!hal.device/0x0x6164876c6220), %i19(0))
+[module.main+00000818]    %r13 = vm.call @hal.device.queue.alloca(%r3(!hal.device/0x0x6164876c6220), %i66(4294967295), %r1(!hal.fence/0x0x6164883a5ab0), %r11(!hal.fence/0x0x6164883a3740), %i19(0), %i18(48), %i20(3075), %i62(192))
+[module.main+00000834]    %i90:91 = vm.add.i64 %i80:81(20), %i8:9(63)
+[module.main+0000083B]    %i90:91 = vm.and.i64 %i90:91(83), %i6:7(-64)
+[module.main+00000842]    %i90:91 = vm.add.i64 %i90:91(64), %i64:65(576)
+[module.main+00000849]    %r18 = vm.call @hal.fence.create(%r3(!hal.device/0x0x6164876c6220), %i19(0))
+[module.main+00000858]    %r1 = vm.call @hal.device.queue.alloca(%r3(!hal.device/0x0x6164876c6220), %i66(4294967295), %r1(!hal.fence/0x0x6164883a5ab0), %r18(!hal.fence/0x0x6164883a6680), %i19(0), %i18(48), %i20(3075), %i90(640))
+[module.main+00000874]    %r11 = vm.call.varadic @hal.fence.join(%r11(!hal.fence/0x0x6164883a3740), %r18(!hal.fence/0x0x6164883a6680))
+[module.main+00000888]    %i35 = vm.trunc.i64.i32 %i76:77(0)
+[module.main+0000088D]    %i92:93 = vm.shr.i64.u %i76:77(0), %i15(32)
+[module.main+00000894]    %i69 = vm.trunc.i64.i32 %i92:93(0)
+[module.main+00000899]    %i92 = vm.trunc.i64.i32 %i50:51(1664)
+[module.main+0000089E]    %i94:95 = vm.shr.i64.u %i50:51(1664), %i15(32)
+[module.main+000008A5]    %i93 = vm.trunc.i64.i32 %i94:95(0)
+[module.main+000008AA]    %i94 = vm.trunc.i64.i32 %i46:47(1472)
+[module.main+000008AF]    %i96:97 = vm.shr.i64.u %i46:47(1472), %i15(32)
+[module.main+000008B6]    %i95 = vm.trunc.i64.i32 %i96:97(0)
+[module.main+000008BB]    %i96 = vm.trunc.i64.i32 %i72:73(128)
+[module.main+000008C0]    %i98:99 = vm.shr.i64.u %i72:73(128), %i15(32)
+[module.main+000008C7]    %i97 = vm.trunc.i64.i32 %i98:99(0)
+[module.main+000008CC]    %i98 = vm.trunc.i64.i32 %i54:55(64)
+[module.main+000008D1]    %i54:55 = vm.shr.i64.u %i54:55(64), %i15(32)
+[module.main+000008D8]    %i54 = vm.trunc.i64.i32 %i54:55(0)
+[module.main+000008DD]    %i55 = vm.trunc.i64.i32 %i84:85(13504)
+[module.main+000008E2]    %i100:101 = vm.shr.i64.u %i84:85(13504), %i15(32)
+[module.main+000008E9]    %i99 = vm.trunc.i64.i32 %i100:101(0)
+[module.main+000008EE]    %i100 = vm.trunc.i64.i32 %i88:89(1)
+[module.main+000008F3]    %i88:89 = vm.shr.i64.u %i88:89(1), %i15(32)
+[module.main+000008FA]    %i88 = vm.trunc.i64.i32 %i88:89(0)
+[module.main+000008FF]    %r18 = vm.call @hal.command_buffer.create(%r3(!hal.device/0x0x6164876c6220), %i22(1), %i14(3), %i66(4294967295), %i19(0))
+[module.main+00000914]    vm.call @hal.command_buffer.execution_barrier(%r18(!hal.command_buffer/0x0x6164883a6aa0), %i12(28), %i11(13), %i19(0))
+[module.main+00000926]    vm.call @hal.command_buffer.copy_buffer(%r18(!hal.command_buffer/0x0x6164883a6aa0), %i19(0), %i19(0), %r16(!hal.buffer/0x0x616488116860), %i78(0), %r1(!hal.buffer/0x0x6164883a6a10), %i64(576), %i80(20))
+[module.main+00000940]    vm.call @hal.command_buffer.execution_barrier(%r18(!hal.command_buffer/0x0x6164883a6aa0), %i12(28), %i11(13), %i19(0))
+[module.main+00000952]    vm.call.varadic @hal.command_buffer.dispatch(%r18(!hal.command_buffer/0x0x6164883a6aa0), %r4(!hal.executable/0x0x616488094490), %i5(5), %i22(1), %i22(1), %i22(1), %i44(0), %i21(0), %i34(0), %i19(0), %i19(0), %r0(!hal.buffer/0x0x6164883a4be0), %i44(0), %i32(192), %i19(0), %i19(0), %r1(!hal.buffer/0x0x6164883a6a10), %i44(0), %i90(640), %i19(0), %i19(0), %r1(!hal.buffer/0x0x6164883a6a10), %i44(0), %i90(640), %i19(0), %i19(0), %r13(!hal.buffer/0x0x6164883a5b50), %i44(0), %i62(192))
+[module.main+000009AA]    vm.call.varadic @hal.command_buffer.dispatch(%r18(!hal.command_buffer/0x0x6164883a6aa0), %r4(!hal.executable/0x0x616488094490), %i4(6), %i22(1), %i22(1), %i22(1), %i44(0), %i35(0), %i69(0), %i21(0), %i34(0), %i19(0), %i19(0), %r14(!hal.buffer/0x0x616488399400), %i44(0), %i74(13760), %i19(0), %i19(0), %r0(!hal.buffer/0x0x6164883a4be0), %i44(0), %i32(192), %i19(0), %i19(0), %r1(!hal.buffer/0x0x6164883a6a10), %i44(0), %i90(640))
+[module.main+000009FC]    vm.call @hal.command_buffer.copy_buffer(%r18(!hal.command_buffer/0x0x6164883a6aa0), %i19(0), %i19(0), %r12(!hal.buffer/0x0x6164883a4be0), %i72(128), %r1(!hal.buffer/0x0x6164883a6a10), %i42(256), %i24(40))
+[module.main+00000A16]    vm.call @hal.command_buffer.execution_barrier(%r18(!hal.command_buffer/0x0x6164883a6aa0), %i12(28), %i11(13), %i19(0))
+[module.main+00000A28]    vm.call.varadic @hal.command_buffer.dispatch(%r18(!hal.command_buffer/0x0x6164883a6aa0), %r4(!hal.executable/0x0x616488094490), %i3(7), %i2(2), %i22(1), %i22(1), %i44(0), %i92(1664), %i93(0), %i94(1472), %i95(0), %i19(0), %i19(0), %r1(!hal.buffer/0x0x6164883a6a10), %i44(0), %i90(640), %i19(0), %i19(0), %r8(!hal.buffer/0x0x616488399400), %i44(0), %i48(13760), %i19(0), %i19(0), %r6(!hal.buffer/0x0x616488399400), %i44(0), %i40(13760), %i19(0), %i19(0), %r1(!hal.buffer/0x0x6164883a6a10), %i44(0), %i90(640))
+[module.main+00000A84]    vm.call @hal.command_buffer.execution_barrier(%r18(!hal.command_buffer/0x0x6164883a6aa0), %i12(28), %i11(13), %i19(0))
+[module.main+00000A96]    vm.call.varadic @hal.command_buffer.dispatch(%r18(!hal.command_buffer/0x0x6164883a6aa0), %r4(!hal.executable/0x0x616488094490), %i1(8), %i22(1), %i22(1), %i22(1), %i44(0), %i96(128), %i97(0), %i98(64), %i54(0), %i19(0), %i19(0), %r1(!hal.buffer/0x0x6164883a6a10), %i44(0), %i90(640), %i19(0), %i19(0), %r12(!hal.buffer/0x0x6164883a4be0), %i44(0), %i56(192), %i19(0), %i19(0), %r10(!hal.buffer/0x0x6164883a4be0), %i44(0), %i52(192), %i19(0), %i19(0), %r13(!hal.buffer/0x0x6164883a5b50), %i44(0), %i62(192), %i19(0), %i19(0), %r13(!hal.buffer/0x0x6164883a5b50), %i44(0), %i62(192))
+[module.main+00000AFC]    vm.call @hal.command_buffer.execution_barrier(%r18(!hal.command_buffer/0x0x6164883a6aa0), %i12(28), %i11(13), %i19(0))
+[module.main+00000B0E]    vm.call.varadic @hal.command_buffer.dispatch(%r18(!hal.command_buffer/0x0x6164883a6aa0), %r4(!hal.executable/0x0x616488094490), %i0(10), %i22(1), %i22(1), %i22(1), %i44(0), %i55(13504), %i99(0), %i100(1), %i88(0), %i19(0), %i19(0), %r13(!hal.buffer/0x0x6164883a5b50), %i44(0), %i62(192), %i19(0), %i19(0), %r17(!hal.buffer/0x0x616488399400), %i44(0), %i82(13760))
+[module.main+00000B56]    vm.call @hal.command_buffer.execution_barrier(%r18(!hal.command_buffer/0x0x6164883a6aa0), %i12(28), %i11(13), %i19(0))
+[module.main+00000B68]    vm.call @hal.command_buffer.finalize(%r18(!hal.command_buffer/0x0x6164883a6aa0))
+[module.main+00000B74]    %r0 = vm.call @hal.fence.create(%r3(!hal.device/0x0x6164876c6220), %i19(0))
+[module.main+00000B84]    vm.call.varadic @hal.device.queue.execute(%r3(!hal.device/0x0x6164876c6220), %i66(4294967295), %r11(!hal.fence/0x0x6164883a5ab0), %r0(!hal.fence/0x0x6164883a6680), %r18(!hal.command_buffer/0x0x6164883a6aa0))
+[module.main+00000BA4]    %r10 = vm.call @hal.fence.create(%r3(!hal.device/0x0x6164876c6220), %i19(0))
+[module.main+00000BB4]    vm.call @hal.device.queue.dealloca(%r3(!hal.device/0x0x6164876c6220), %i66(4294967295), %r0(!hal.fence/0x0x6164883a6680), %r10(!hal.fence/0x0x6164883a3740), %r1(!hal.buffer/0x0x6164883a6a10))
+[module.main+00000BC8]    vm.br ^00000422(%r10(!hal.fence/0x0x6164883a3740)->%r24, %i60(128)->%i72, %i61(0)->%i73, %i58(64)->%i54, %i59(0)->%i55, %r10(!hal.fence/0x0x6164883a3740)->%r1, %r10(!hal.fence/0x0x6164883a3740)->%r11, %r10(!hal.fence/0x0x6164883a3740)->%r18, %i44(0)->%i34, %i45(0)->%i35, %i62(192)->%i32, %i63(0)->%i33, %i62(192)->%i52, %i63(0)->%i53, %i62(192)->%i56, %i63(0)->%i57, %r13(!hal.buffer/0x0x6164883a5b50)->%r0, %r13(!hal.buffer/0x0x6164883a5b50)->%r10, %r13(!hal.buffer/0x0x6164883a5b50)->%r12, %r24(!hal.fence/0x0x6164883a4960)->%r13)
+[module.main+00000423]    %r19 = vm.call.varadic @hal.fence.join(%r1(!hal.fence/0x0x6164883a3740), %r5(!hal.fence/0x0x6164883a1d10))
+[module.main+00000436]    %r20 = vm.call @hal.fence.create(%r3(!hal.device/0x0x6164876c6220), %i19(0))
+[module.main+00000446]    %r21 = vm.call @hal.device.queue.alloca(%r3(!hal.device/0x0x6164876c6220), %i66(4294967295), %r19(!hal.fence/0x0x6164883a67d0), %r20(!hal.fence/0x0x6164883a4ce0), %i19(0), %i17(86), %i16(150998019), %i26(1))
+[module.main+00000462]    %r22 = vm.call @hal.fence.create(%r3(!hal.device/0x0x6164876c6220), %i19(0))
+[module.main+00000472]    %r19 = vm.call @hal.device.queue.alloca(%r3(!hal.device/0x0x6164876c6220), %i66(4294967295), %r19(!hal.fence/0x0x6164883a67d0), %r22(!hal.fence/0x0x6164883a6680), %i19(0), %i18(48), %i20(3075), %i58(64))
+[module.main+0000048E]    %r20 = vm.call.varadic @hal.fence.join(%r20(!hal.fence/0x0x6164883a4ce0), %r22(!hal.fence/0x0x6164883a6680))
+[module.main+000004A2]    %i21 = vm.trunc.i64.i32 %i34:35(0)
+[module.main+000004A7]    %i34:35 = vm.shr.i64.u %i34:35(0), %i15(32)
+[module.main+000004AE]    %i34 = vm.trunc.i64.i32 %i34:35(0)
+[module.main+000004B3]    %i35 = vm.trunc.i64.i32 %i38:39(1344)
+[module.main+000004B8]    %i88:89 = vm.shr.i64.u %i38:39(1344), %i15(32)
+[module.main+000004BF]    %i69 = vm.trunc.i64.i32 %i88:89(0)
+[module.main+000004C4]    %r22 = vm.call @hal.command_buffer.create(%r3(!hal.device/0x0x6164876c6220), %i22(1), %i14(3), %i66(4294967295), %i19(0))
+[module.main+000004DA]    vm.call.varadic @hal.command_buffer.dispatch(%r22(!hal.command_buffer/0x0x6164883a3c00), %r4(!hal.executable/0x0x616488094490), %i13(4), %i22(1), %i22(1), %i22(1), %i44(0), %i21(0), %i34(0), %i35(1344), %i69(0), %i19(0), %i19(0), %r0(!hal.buffer/0x0x6164883a5b50), %i44(0), %i32(192), %i19(0), %i19(0), %r2(!hal.buffer/0x0x616488399400), %i44(0), %i36(13760), %i19(0), %i19(0), %r19(!hal.buffer/0x0x6164883a65f0), %i44(0), %i58(64))
+[module.main+0000052C]    vm.call @hal.command_buffer.execution_barrier(%r22(!hal.command_buffer/0x0x6164883a3c00), %i12(28), %i11(13), %i19(0))
+[module.main+0000053E]    vm.call @hal.command_buffer.copy_buffer(%r22(!hal.command_buffer/0x0x6164883a3c00), %i19(0), %i19(0), %r19(!hal.buffer/0x0x6164883a65f0), %i44(0), %r21(!hal.buffer/0x0x6164883a7000), %i44(0), %i26(1))
+[module.main+00000558]    vm.call @hal.command_buffer.execution_barrier(%r22(!hal.command_buffer/0x0x6164883a3c00), %i12(28), %i11(13), %i19(0))
+[module.main+0000056A]    vm.call @hal.command_buffer.finalize(%r22(!hal.command_buffer/0x0x6164883a3c00))
+[module.main+00000576]    %r23 = vm.call @hal.fence.create(%r3(!hal.device/0x0x6164876c6220), %i19(0))
+[module.main+00000586]    vm.call.varadic @hal.device.queue.execute(%r3(!hal.device/0x0x6164876c6220), %i66(4294967295), %r20(!hal.fence/0x0x6164883a67d0), %r23(!hal.fence/0x0x6164883a6680), %r22(!hal.command_buffer/0x0x6164883a3c00))
+[module.main+000005A6]    %r20 = vm.call @hal.fence.create(%r3(!hal.device/0x0x6164876c6220), %i19(0))
+[module.main+000005B6]    vm.call @hal.device.queue.dealloca(%r3(!hal.device/0x0x6164876c6220), %i66(4294967295), %r23(!hal.fence/0x0x6164883a6680), %r20(!hal.fence/0x0x6164883a4600), %r19(!hal.buffer/0x0x6164883a65f0))
+[module.main+000005CA]    %i35 = vm.call.varadic @hal.fence.await(%i68(4294967295), %r20(!hal.fence/0x0x6164883a4600))
+[module.main+000005E0]    vm.cond_br %i35(0), ^00000616(%i35(0)->%i0), ^000005F4()
+[module.main+000005F5]    %i35 = vm.call @hal.buffer.load(%r21(!hal.buffer/0x0x6164883a7000), %i44(0), %i22(1))
+[module.main+00000606]    vm.cond_br %i35(1), ^00000637(), ^00000C20()
+[module.main+00000638]    %r19 = vm.call @hal.fence.create(%r3(!hal.device/0x0x6164876c6220), %i19(0))
+[module.main+00000648]    %r20 = vm.call @hal.device.queue.alloca(%r3(!hal.device/0x0x6164876c6220), %i66(4294967295), %r1(!hal.fence/0x0x6164883a3740), %r19(!hal.fence/0x0x6164883a4ce0), %i19(0), %i17(86), %i16(150998019), %i28(4))
+[module.main+00000664]    %r21 = vm.call @hal.fence.create(%r3(!hal.device/0x0x6164876c6220), %i19(0))
+[module.main+00000674]    %r22 = vm.call @hal.device.queue.alloca(%r3(!hal.device/0x0x6164876c6220), %i66(4294967295), %r1(!hal.fence/0x0x6164883a3740), %r21(!hal.fence/0x0x6164883a4600), %i19(0), %i18(48), %i20(3075), %i58(64))
+[module.main+00000690]    %r19 = vm.call.varadic @hal.fence.join(%r19(!hal.fence/0x0x6164883a4ce0), %r21(!hal.fence/0x0x6164883a4600))
+[module.main+000006A4]    %r21 = vm.call @hal.command_buffer.create(%r3(!hal.device/0x0x6164876c6220), %i22(1), %i14(3), %i66(4294967295), %i19(0))
+[module.main+000006BA]    vm.call.varadic @hal.command_buffer.dispatch(%r21(!hal.command_buffer/0x0x6164883a3c00), %r4(!hal.executable/0x0x616488094490), %i10(9), %i22(1), %i22(1), %i22(1), %i44(0), %i21(0), %i34(0), %i19(0), %i19(0), %r0(!hal.buffer/0x0x6164883a5b50), %i44(0), %i32(192), %i19(0), %i19(0), %r22(!hal.buffer/0x0x6164883a74a0), %i44(0), %i58(64))
+[module.main+000006FE]    vm.call @hal.command_buffer.execution_barrier(%r21(!hal.command_buffer/0x0x6164883a3c00), %i12(28), %i11(13), %i19(0))
+[module.main+00000710]    vm.call @hal.command_buffer.copy_buffer(%r21(!hal.command_buffer/0x0x6164883a3c00), %i19(0), %i19(0), %r22(!hal.buffer/0x0x6164883a74a0), %i44(0), %r20(!hal.buffer/0x0x6164883a71d0), %i44(0), %i28(4))
+[module.main+0000072A]    vm.call @hal.command_buffer.execution_barrier(%r21(!hal.command_buffer/0x0x6164883a3c00), %i12(28), %i11(13), %i19(0))
+[module.main+0000073C]    vm.call @hal.command_buffer.finalize(%r21(!hal.command_buffer/0x0x6164883a3c00))
+[module.main+00000748]    %r23 = vm.call @hal.fence.create(%r3(!hal.device/0x0x6164876c6220), %i19(0))
+[module.main+00000758]    vm.call.varadic @hal.device.queue.execute(%r3(!hal.device/0x0x6164876c6220), %i66(4294967295), %r19(!hal.fence/0x0x6164883a67d0), %r23(!hal.fence/0x0x6164883a4600), %r21(!hal.command_buffer/0x0x6164883a3c00))
+[module.main+00000778]    %r19 = vm.call @hal.fence.create(%r3(!hal.device/0x0x6164876c6220), %i19(0))
+[module.main+00000788]    vm.call @hal.device.queue.dealloca(%r3(!hal.device/0x0x6164876c6220), %i66(4294967295), %r23(!hal.fence/0x0x6164883a4600), %r19(!hal.fence/0x0x6164883a6680), %r22(!hal.buffer/0x0x6164883a74a0))
+[module.main+0000079C]    %i35 = vm.call.varadic @hal.fence.await(%i68(4294967295), %r19(!hal.fence/0x0x6164883a6680))
+[module.main+000007B2]    vm.cond_br %i35(0), ^00000616(%i35(0)->%i0), ^000007C6()
+[module.main+000007C7]    %i35 = vm.call @hal.buffer.load(%r20(!hal.buffer/0x0x6164883a71d0), %i44(0), %i13(4))
+[module.main+000007D8]    %i88:89 = vm.ext.i32.i64.s %i35(2)
+[module.main+000007DD]    %i88:89 = vm.max.i64.s %i88:89(2), %i44:45(0)
+[module.main+000007E4]    %i88:89 = vm.min.i64.s %i88:89(2), %i28:29(4)
+[module.main+000007EB]    %r1 = vm.call.varadic @hal.fence.join(%r1(!hal.fence/0x0x6164883a3740), %r15(!hal.fence/0x0x6164883a1d10), %r13(!hal.fence/0x0x6164883a3740), %r9(!hal.fence/0x0x6164883a1d10), %r7(!hal.fence/0x0x6164883a1d10), %r11(!hal.fence/0x0x6164883a3740), %r18(!hal.fence/0x0x6164883a3740))
+[module.main+00000808]    %r11 = vm.call @hal.fence.create(%r3(!hal.device/0x0x6164876c6220), %i19(0))
+[module.main+00000818]    %r13 = vm.call @hal.device.queue.alloca(%r3(!hal.device/0x0x6164876c6220), %i66(4294967295), %r1(!hal.fence/0x0x6164883a7260), %r11(!hal.fence/0x0x6164883a4ce0), %i19(0), %i18(48), %i20(3075), %i62(192))
+[module.main+00000834]    %i90:91 = vm.add.i64 %i80:81(20), %i8:9(63)
+[module.main+0000083B]    %i90:91 = vm.and.i64 %i90:91(83), %i6:7(-64)
+[module.main+00000842]    %i90:91 = vm.add.i64 %i90:91(64), %i64:65(576)
+[module.main+00000849]    %r18 = vm.call @hal.fence.create(%r3(!hal.device/0x0x6164876c6220), %i19(0))
+[module.main+00000858]    %r1 = vm.call @hal.device.queue.alloca(%r3(!hal.device/0x0x6164876c6220), %i66(4294967295), %r1(!hal.fence/0x0x6164883a7260), %r18(!hal.fence/0x0x6164883a4960), %i19(0), %i18(48), %i20(3075), %i90(640))
+[module.main+00000874]    %r11 = vm.call.varadic @hal.fence.join(%r11(!hal.fence/0x0x6164883a4ce0), %r18(!hal.fence/0x0x6164883a4960))
+[module.main+00000888]    %i35 = vm.trunc.i64.i32 %i76:77(0)
+[module.main+0000088D]    %i92:93 = vm.shr.i64.u %i76:77(0), %i15(32)
+[module.main+00000894]    %i69 = vm.trunc.i64.i32 %i92:93(0)
+[module.main+00000899]    %i92 = vm.trunc.i64.i32 %i50:51(1664)
+[module.main+0000089E]    %i94:95 = vm.shr.i64.u %i50:51(1664), %i15(32)
+[module.main+000008A5]    %i93 = vm.trunc.i64.i32 %i94:95(0)
+[module.main+000008AA]    %i94 = vm.trunc.i64.i32 %i46:47(1472)
+[module.main+000008AF]    %i96:97 = vm.shr.i64.u %i46:47(1472), %i15(32)
+[module.main+000008B6]    %i95 = vm.trunc.i64.i32 %i96:97(0)
+[module.main+000008BB]    %i96 = vm.trunc.i64.i32 %i72:73(128)
+[module.main+000008C0]    %i98:99 = vm.shr.i64.u %i72:73(128), %i15(32)
+[module.main+000008C7]    %i97 = vm.trunc.i64.i32 %i98:99(0)
+[module.main+000008CC]    %i98 = vm.trunc.i64.i32 %i54:55(64)
+[module.main+000008D1]    %i54:55 = vm.shr.i64.u %i54:55(64), %i15(32)
+[module.main+000008D8]    %i54 = vm.trunc.i64.i32 %i54:55(0)
+[module.main+000008DD]    %i55 = vm.trunc.i64.i32 %i84:85(13504)
+[module.main+000008E2]    %i100:101 = vm.shr.i64.u %i84:85(13504), %i15(32)
+[module.main+000008E9]    %i99 = vm.trunc.i64.i32 %i100:101(0)
+[module.main+000008EE]    %i100 = vm.trunc.i64.i32 %i88:89(2)
+[module.main+000008F3]    %i88:89 = vm.shr.i64.u %i88:89(2), %i15(32)
+[module.main+000008FA]    %i88 = vm.trunc.i64.i32 %i88:89(0)
+[module.main+000008FF]    %r18 = vm.call @hal.command_buffer.create(%r3(!hal.device/0x0x6164876c6220), %i22(1), %i14(3), %i66(4294967295), %i19(0))
+[module.main+00000914]    vm.call @hal.command_buffer.execution_barrier(%r18(!hal.command_buffer/0x0x6164883a7530), %i12(28), %i11(13), %i19(0))
+[module.main+00000926]    vm.call @hal.command_buffer.copy_buffer(%r18(!hal.command_buffer/0x0x6164883a7530), %i19(0), %i19(0), %r16(!hal.buffer/0x0x616488116860), %i78(0), %r1(!hal.buffer/0x0x6164883a7410), %i64(576), %i80(20))
+[module.main+00000940]    vm.call @hal.command_buffer.execution_barrier(%r18(!hal.command_buffer/0x0x6164883a7530), %i12(28), %i11(13), %i19(0))
+[module.main+00000952]    vm.call.varadic @hal.command_buffer.dispatch(%r18(!hal.command_buffer/0x0x6164883a7530), %r4(!hal.executable/0x0x616488094490), %i5(5), %i22(1), %i22(1), %i22(1), %i44(0), %i21(0), %i34(0), %i19(0), %i19(0), %r0(!hal.buffer/0x0x6164883a5b50), %i44(0), %i32(192), %i19(0), %i19(0), %r1(!hal.buffer/0x0x6164883a7410), %i44(0), %i90(640), %i19(0), %i19(0), %r1(!hal.buffer/0x0x6164883a7410), %i44(0), %i90(640), %i19(0), %i19(0), %r13(!hal.buffer/0x0x6164883a65f0), %i44(0), %i62(192))
+[module.main+000009AA]    vm.call.varadic @hal.command_buffer.dispatch(%r18(!hal.command_buffer/0x0x6164883a7530), %r4(!hal.executable/0x0x616488094490), %i4(6), %i22(1), %i22(1), %i22(1), %i44(0), %i35(0), %i69(0), %i21(0), %i34(0), %i19(0), %i19(0), %r14(!hal.buffer/0x0x616488399400), %i44(0), %i74(13760), %i19(0), %i19(0), %r0(!hal.buffer/0x0x6164883a5b50), %i44(0), %i32(192), %i19(0), %i19(0), %r1(!hal.buffer/0x0x6164883a7410), %i44(0), %i90(640))
+[module.main+000009FC]    vm.call @hal.command_buffer.copy_buffer(%r18(!hal.command_buffer/0x0x6164883a7530), %i19(0), %i19(0), %r12(!hal.buffer/0x0x6164883a5b50), %i72(128), %r1(!hal.buffer/0x0x6164883a7410), %i42(256), %i24(40))
+[module.main+00000A16]    vm.call @hal.command_buffer.execution_barrier(%r18(!hal.command_buffer/0x0x6164883a7530), %i12(28), %i11(13), %i19(0))
+[module.main+00000A28]    vm.call.varadic @hal.command_buffer.dispatch(%r18(!hal.command_buffer/0x0x6164883a7530), %r4(!hal.executable/0x0x616488094490), %i3(7), %i2(2), %i22(1), %i22(1), %i44(0), %i92(1664), %i93(0), %i94(1472), %i95(0), %i19(0), %i19(0), %r1(!hal.buffer/0x0x6164883a7410), %i44(0), %i90(640), %i19(0), %i19(0), %r8(!hal.buffer/0x0x616488399400), %i44(0), %i48(13760), %i19(0), %i19(0), %r6(!hal.buffer/0x0x616488399400), %i44(0), %i40(13760), %i19(0), %i19(0), %r1(!hal.buffer/0x0x6164883a7410), %i44(0), %i90(640))
+[module.main+00000A84]    vm.call @hal.command_buffer.execution_barrier(%r18(!hal.command_buffer/0x0x6164883a7530), %i12(28), %i11(13), %i19(0))
+[module.main+00000A96]    vm.call.varadic @hal.command_buffer.dispatch(%r18(!hal.command_buffer/0x0x6164883a7530), %r4(!hal.executable/0x0x616488094490), %i1(8), %i22(1), %i22(1), %i22(1), %i44(0), %i96(128), %i97(0), %i98(64), %i54(0), %i19(0), %i19(0), %r1(!hal.buffer/0x0x6164883a7410), %i44(0), %i90(640), %i19(0), %i19(0), %r12(!hal.buffer/0x0x6164883a5b50), %i44(0), %i56(192), %i19(0), %i19(0), %r10(!hal.buffer/0x0x6164883a5b50), %i44(0), %i52(192), %i19(0), %i19(0), %r13(!hal.buffer/0x0x6164883a65f0), %i44(0), %i62(192), %i19(0), %i19(0), %r13(!hal.buffer/0x0x6164883a65f0), %i44(0), %i62(192))
+[module.main+00000AFC]    vm.call @hal.command_buffer.execution_barrier(%r18(!hal.command_buffer/0x0x6164883a7530), %i12(28), %i11(13), %i19(0))
+[module.main+00000B0E]    vm.call.varadic @hal.command_buffer.dispatch(%r18(!hal.command_buffer/0x0x6164883a7530), %r4(!hal.executable/0x0x616488094490), %i0(10), %i22(1), %i22(1), %i22(1), %i44(0), %i55(13504), %i99(0), %i100(2), %i88(0), %i19(0), %i19(0), %r13(!hal.buffer/0x0x6164883a65f0), %i44(0), %i62(192), %i19(0), %i19(0), %r17(!hal.buffer/0x0x616488399400), %i44(0), %i82(13760))
+[module.main+00000B56]    vm.call @hal.command_buffer.execution_barrier(%r18(!hal.command_buffer/0x0x6164883a7530), %i12(28), %i11(13), %i19(0))
+[module.main+00000B68]    vm.call @hal.command_buffer.finalize(%r18(!hal.command_buffer/0x0x6164883a7530))
+[module.main+00000B74]    %r0 = vm.call @hal.fence.create(%r3(!hal.device/0x0x6164876c6220), %i19(0))
+[module.main+00000B84]    vm.call.varadic @hal.device.queue.execute(%r3(!hal.device/0x0x6164876c6220), %i66(4294967295), %r11(!hal.fence/0x0x6164883a67d0), %r0(!hal.fence/0x0x6164883a4960), %r18(!hal.command_buffer/0x0x6164883a7530))
+[module.main+00000BA4]    %r10 = vm.call @hal.fence.create(%r3(!hal.device/0x0x6164876c6220), %i19(0))
+[module.main+00000BB4]    vm.call @hal.device.queue.dealloca(%r3(!hal.device/0x0x6164876c6220), %i66(4294967295), %r0(!hal.fence/0x0x6164883a4960), %r10(!hal.fence/0x0x6164883a4ce0), %r1(!hal.buffer/0x0x6164883a7410))
+[module.main+00000BC8]    vm.br ^00000422(%r10(!hal.fence/0x0x6164883a4ce0)->%r24, %i60(128)->%i72, %i61(0)->%i73, %i58(64)->%i54, %i59(0)->%i55, %r10(!hal.fence/0x0x6164883a4ce0)->%r1, %r10(!hal.fence/0x0x6164883a4ce0)->%r11, %r10(!hal.fence/0x0x6164883a4ce0)->%r18, %i44(0)->%i34, %i45(0)->%i35, %i62(192)->%i32, %i63(0)->%i33, %i62(192)->%i52, %i63(0)->%i53, %i62(192)->%i56, %i63(0)->%i57, %r13(!hal.buffer/0x0x6164883a65f0)->%r0, %r13(!hal.buffer/0x0x6164883a65f0)->%r10, %r13(!hal.buffer/0x0x6164883a65f0)->%r12, %r24(!hal.fence/0x0x6164883a3740)->%r13)
+[module.main+00000423]    %r19 = vm.call.varadic @hal.fence.join(%r1(!hal.fence/0x0x6164883a4ce0), %r5(!hal.fence/0x0x6164883a1d10))
+[module.main+00000436]    %r20 = vm.call @hal.fence.create(%r3(!hal.device/0x0x6164876c6220), %i19(0))
+[module.main+00000446]    %r21 = vm.call @hal.device.queue.alloca(%r3(!hal.device/0x0x6164876c6220), %i66(4294967295), %r19(!hal.fence/0x0x6164883a67d0), %r20(!hal.fence/0x0x6164883a6680), %i19(0), %i17(86), %i16(150998019), %i26(1))
+[module.main+00000462]    %r22 = vm.call @hal.fence.create(%r3(!hal.device/0x0x6164876c6220), %i19(0))
+[module.main+00000472]    %r19 = vm.call @hal.device.queue.alloca(%r3(!hal.device/0x0x6164876c6220), %i66(4294967295), %r19(!hal.fence/0x0x6164883a67d0), %r22(!hal.fence/0x0x6164883a4960), %i19(0), %i18(48), %i20(3075), %i58(64))
+[module.main+0000048E]    %r20 = vm.call.varadic @hal.fence.join(%r20(!hal.fence/0x0x6164883a6680), %r22(!hal.fence/0x0x6164883a4960))
+[module.main+000004A2]    %i21 = vm.trunc.i64.i32 %i34:35(0)
+[module.main+000004A7]    %i34:35 = vm.shr.i64.u %i34:35(0), %i15(32)
+[module.main+000004AE]    %i34 = vm.trunc.i64.i32 %i34:35(0)
+[module.main+000004B3]    %i35 = vm.trunc.i64.i32 %i38:39(1344)
+[module.main+000004B8]    %i88:89 = vm.shr.i64.u %i38:39(1344), %i15(32)
+[module.main+000004BF]    %i69 = vm.trunc.i64.i32 %i88:89(0)
+[module.main+000004C4]    %r22 = vm.call @hal.command_buffer.create(%r3(!hal.device/0x0x6164876c6220), %i22(1), %i14(3), %i66(4294967295), %i19(0))
+[module.main+000004DA]    vm.call.varadic @hal.command_buffer.dispatch(%r22(!hal.command_buffer/0x0x6164883a5b20), %r4(!hal.executable/0x0x616488094490), %i13(4), %i22(1), %i22(1), %i22(1), %i44(0), %i21(0), %i34(0), %i35(1344), %i69(0), %i19(0), %i19(0), %r0(!hal.buffer/0x0x6164883a65f0), %i44(0), %i32(192), %i19(0), %i19(0), %r2(!hal.buffer/0x0x616488399400), %i44(0), %i36(13760), %i19(0), %i19(0), %r19(!hal.buffer/0x0x6164883a74a0), %i44(0), %i58(64))
+[module.main+0000052C]    vm.call @hal.command_buffer.execution_barrier(%r22(!hal.command_buffer/0x0x6164883a5b20), %i12(28), %i11(13), %i19(0))
+[module.main+0000053E]    vm.call @hal.command_buffer.copy_buffer(%r22(!hal.command_buffer/0x0x6164883a5b20), %i19(0), %i19(0), %r19(!hal.buffer/0x0x6164883a74a0), %i44(0), %r21(!hal.buffer/0x0x6164883a7410), %i44(0), %i26(1))
+[module.main+00000558]    vm.call @hal.command_buffer.execution_barrier(%r22(!hal.command_buffer/0x0x6164883a5b20), %i12(28), %i11(13), %i19(0))
+[module.main+0000056A]    vm.call @hal.command_buffer.finalize(%r22(!hal.command_buffer/0x0x6164883a5b20))
+[module.main+00000576]    %r23 = vm.call @hal.fence.create(%r3(!hal.device/0x0x6164876c6220), %i19(0))
+[module.main+00000586]    vm.call.varadic @hal.device.queue.execute(%r3(!hal.device/0x0x6164876c6220), %i66(4294967295), %r20(!hal.fence/0x0x6164883a67d0), %r23(!hal.fence/0x0x6164883a4960), %r22(!hal.command_buffer/0x0x6164883a5b20))
+[module.main+000005A6]    %r20 = vm.call @hal.fence.create(%r3(!hal.device/0x0x6164876c6220), %i19(0))
+[module.main+000005B6]    vm.call @hal.device.queue.dealloca(%r3(!hal.device/0x0x6164876c6220), %i66(4294967295), %r23(!hal.fence/0x0x6164883a4960), %r20(!hal.fence/0x0x6164883a4600), %r19(!hal.buffer/0x0x6164883a74a0))
+[module.main+000005CA]    %i35 = vm.call.varadic @hal.fence.await(%i68(4294967295), %r20(!hal.fence/0x0x6164883a4600))
+[module.main+000005E0]    vm.cond_br %i35(0), ^00000616(%i35(0)->%i0), ^000005F4()
+[module.main+000005F5]    %i35 = vm.call @hal.buffer.load(%r21(!hal.buffer/0x0x6164883a7410), %i44(0), %i22(1))
+[module.main+00000606]    vm.cond_br %i35(0), ^00000637(), ^00000C20()
+[module.main+00000C21]    %r0 = vm.call @hal.fence.create(%r3(!hal.device/0x0x6164876c6220), %i19(0))
+[module.main+00000C30]    %r1 = vm.call @hal.device.queue.alloca(%r3(!hal.device/0x0x6164876c6220), %i66(4294967295), %r18(!hal.fence/0x0x6164883a4ce0), %r0(!hal.fence/0x0x6164883a6680), %i19(0), %i18(48), %i20(3075), %i86(200))
+[module.main+00000C4C]    %r2 = vm.call @hal.fence.create(%r3(!hal.device/0x0x6164876c6220), %i19(0))
+[module.main+00000C5C]    vm.call @hal.device.queue.copy(%r3(!hal.device/0x0x6164876c6220), %i66(4294967295), %r0(!hal.fence/0x0x6164883a6680), %r2(!hal.fence/0x0x6164883a3740), %r17(!hal.buffer/0x0x616488399400), %i84(13504), %r1(!hal.buffer/0x0x6164883a71a0), %i44(0), %i86(200), %i44(0))
+[module.main+00000C7A]    %i0 = vm.call.varadic @hal.fence.await(%i68(4294967295), %r2(!hal.fence/0x0x6164883a3740))
+[module.main+00000C90]    vm.cond_br %i0(0), ^00000616(), ^00000CA0()
+[module.main+00000CA1]    %r0 = vm.call.varadic @hal.buffer_view.create(%r1(!hal.buffer/0x0x6164883a71a0), %i44(0), %i86(200), %i23(553648160), %i22(1), %i30(5), %i26(1), %i70(10))
+[module.main+00000CCA]    vm.return %r0(!hal.buffer_view/0x0x6164883a6590)
+result[0]: hal.buffer_view
+5x1x10xf32=[[0.743973 0.743973 0.743973 0.743973 0.743973 0.743973 0.743973 0.743973 0.743973 0.743973]][[0.743973 0.743973 0.743973 0.743973 0.743973 0.743973 0.743973 0.743973 0.743973 0.743973]][[0.962937 0.962937 0.962937 0.962937 0.962937 0.962937 0.962937 0.962937 0.962937 0.962937]][[0 0 0 0 0 0 0 0 0 0]][[0 0 0 0 0 0 0 0 0 0]]
